@@ -1,2 +1,4 @@
 # Konf_M20_Kauer_Khalil_Schedler
-AlexDrink
+# AlexDrink
+# Adam erstellt die Klasse AdamsDrinks
+
