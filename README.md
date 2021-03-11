@@ -1,1 +1,2 @@
-# Konf_X20_Kauer_Khalil_Schedler
+# Konf_M20_Kauer_Khalil_Schedler
+AlexDrink
