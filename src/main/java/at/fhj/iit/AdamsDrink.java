@@ -14,4 +14,4 @@ public class AdamsDrink extends SimpleDrink {
     AdamsDrink(String name, Liquid l) {
         super(name, l);
     }
-}k
+}
