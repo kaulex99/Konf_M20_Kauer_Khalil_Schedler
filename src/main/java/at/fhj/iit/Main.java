@@ -1,5 +1,8 @@
 package at.fhj.iit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args){
@@ -8,7 +11,16 @@ public class Main {
         System.out.println(l.getName());
         System.out.println(l.getVolume());
 
+        Liquid anotherLiquid = new Liquid("Reiner Alkohol", 0.125, 99.9);
+
         Drink d = new SimpleDrink("Rotwein",l);
-        System.out.println(d);
+
+        List<Liquid> liquids = new ArrayList<>();
+        liquids.add(l);
+        liquids.add(anotherLiquid);
+
+        Drink myDrink = new AlexDrink("Wonderful name", anotherLiquid);
+
+        System.out.println(myDrink);
     }
 }
