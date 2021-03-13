@@ -59,7 +59,7 @@ public class FabiDrink extends Drink {
         for (Liquid l : liquids) {
             alcQuantity += l.getVolume() * l.getAlcoholPercent();
         }
-        return alcQuantity * this.getVolume();
+        return alcQuantity / this.getVolume();
     }
 
     @Override
