@@ -80,7 +80,7 @@ public class FabiDrink extends Drink {
 
         for (Liquid l : liquids) {
             s.append("\t- ")
-                    .append(getVolume()).append(" l")
+                    .append(l.getVolume()).append(" l")
                     .append(" of ")
                     .append(l.getName())
                     .append(" (").append(l.getAlcoholPercent()).append("%)")
