@@ -71,4 +71,22 @@ public class FabiDrink extends Drink {
         }
         return false;
     }
+
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder(name)
+                .append(" has ").append(getAlcoholPercent()).append("% and contains:\n");
+
+        for (Liquid l : liquids) {
+            s.append("\t- ")
+                    .append(getVolume()).append(" l")
+                    .append(" of ")
+                    .append(l.getName())
+                    .append(" (").append(l.getAlcoholPercent()).append("%)")
+                    .append("\n");
+        }
+
+        return s.toString();
+    }
 }
