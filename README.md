@@ -24,3 +24,4 @@ For creation a name and a main liquid is needed.
 
 # AlexDrink
 Represents a special `FabiDrink` which has minimum 40% of alcohol
+- `getAlcoholPercent` returns the alcohol volume percentage of the mixture. If lower than 40%, level will be increased automatically 
