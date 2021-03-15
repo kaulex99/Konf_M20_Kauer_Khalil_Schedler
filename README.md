@@ -11,7 +11,12 @@ Different liquids and drinks are created and printed on the console.
 
 
 ## AdamsDrink
-Represents a beverage and 
+Represents a beverage and extends -`AlexDrink` class AdamsDrink class  
+- `getVolume()` adds a liter of  liquid
+- `isAlcoholic` checks if the drink is alcoholic or not so if the drink has more than = 0% alcohol it returns true
+- `getAlcoholPercent` takes the return values of the parent class and divides it by ten since I can not bypass the class parents behaviour
+
+
 
 ## FabiDrink
 Represents a wild mix of Liquids. Can be used to create a cocktail.  

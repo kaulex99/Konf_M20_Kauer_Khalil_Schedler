@@ -22,12 +22,12 @@ public class AdamsDrink extends AlexDrink {
 
     @Override
     public double getVolume() {
-        return super.getVolume();
+        return super.getVolume()+1;
     }
 
     @Override
     public double getAlcoholPercent() {
-        return super.getAlcoholPercent();
+        return super.getAlcoholPercent()/10;
     }
 
     @Override

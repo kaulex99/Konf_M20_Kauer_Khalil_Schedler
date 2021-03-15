@@ -26,7 +26,7 @@ public class Main {
 
         Liquid beverage1 = new Liquid("Puntigamer",0.5,4.9);
         AdamsDrink beverage = new AdamsDrink("Puntigamer",beverage1);
-        System.out.printf("%s has %s percent and the size is %s liter and is alcoholic is %b",beverage.toString(),beverage1.getAlcoholPercent(), beverage.getVolume(),beverage.isAlcoholic());
+        System.out.printf("%s has %s percent and the size is %s liter and is alcoholic is %b",beverage.toString(),beverage.getAlcoholPercent(), beverage.getVolume(),beverage.isAlcoholic());
 
     }
 }
