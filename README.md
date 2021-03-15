@@ -11,6 +11,8 @@ Different liquids and drinks are created and printed on the console.
 
 
 ## AdamsDrink
+Represents a beverage and 
+
 ## FabiDrink
 Represents a wild mix of Liquids. Can be used to create a cocktail.  
 For creation a name and a main liquid is needed.
