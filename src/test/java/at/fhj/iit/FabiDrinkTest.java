@@ -11,6 +11,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Fabian Schedler
+ * @version 1.0
+ * @since 2021-04-15
+ */
 class FabiDrinkTest {
 
     private FabiDrink sut;
