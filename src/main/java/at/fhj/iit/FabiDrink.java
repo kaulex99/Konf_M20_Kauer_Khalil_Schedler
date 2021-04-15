@@ -1,7 +1,6 @@
 package at.fhj.iit;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -64,6 +63,8 @@ public class FabiDrink extends Drink {
 
     @Override
     public double getAlcoholPercent() {
+        if (this.getVolume() <= 0) return 0;
+
         double alcQuantity = 0;
         for (Liquid l : liquids) {
             alcQuantity += l.getVolume() * l.getAlcoholPercent();
@@ -85,7 +86,7 @@ public class FabiDrink extends Drink {
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder(name)
-                .append(" has ").append(getAlcoholPercent()).append("% and contains:\n");
+                .append(" has ").append(String.format("%.2f", this.getAlcoholPercent())).append("% and contains:\n");
 
         for (Liquid l : liquids) {
             s.append("\t- ")
