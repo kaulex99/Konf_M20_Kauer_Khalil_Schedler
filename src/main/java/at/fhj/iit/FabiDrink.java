@@ -13,6 +13,15 @@ public class FabiDrink extends Drink {
     protected List<Liquid> liquids = new ArrayList<>();
 
     /**
+     * Creates a FabiDrink object with given name
+     *
+     * @param name       name of drink
+     */
+    FabiDrink(String name){
+        super(name);
+    }
+
+    /**
      * Creates a FabiDrink object with given name and a main liquid
      *
      * @param name       name of drink
