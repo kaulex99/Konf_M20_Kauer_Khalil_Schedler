@@ -8,7 +8,15 @@
   <groupId>at.fhj.iit</groupId>
   <artifactId>Drinks</artifactId>
   <version>1.3.0</version>
-  <name>Drinks</name>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <name>Drinks</name>
 
   <url>https://github.com/michaelulm/software-configuration-management/tree/master/exercises/Drinks-Sample</url>
 
