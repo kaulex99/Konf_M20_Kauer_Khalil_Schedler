@@ -47,7 +47,6 @@ With the tests 2 errors in the class could be detected:
 
 ## AlexTest
 The goal was to reach 100% tests coverage. So we had to test every method of the class. Generally, to tell Java that we want to create a test method, we have to add `@Test` above. In the `@BeforeEach` annotated method, we create an instance of the Drink, so we have an instance ready to test.
-- `getAlcoholPercent` returns the alcohol volume percentage of the mixture. If lower than 40%, level will be increased automatically
 
 ## TestCoverage result by IntelliJ
 | Classname  | Class [%]  | Method [%]  | Line [%]  | 
