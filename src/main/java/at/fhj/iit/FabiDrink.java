@@ -1,16 +1,30 @@
 package at.fhj.iit;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
  * FabiDrink
  * Represents a wild mix of liquids
+ *
+ * @author Fabian Schedler
+ * @version 1.1
  */
 public class FabiDrink extends Drink {
 
+    /**
+     * List of liquids in the drink
+     */
     protected List<Liquid> liquids = new ArrayList<>();
+
+    /**
+     * Creates a FabiDrink object with given name
+     *
+     * @param name       name of drink
+     */
+    FabiDrink(String name){
+        super(name);
+    }
 
     /**
      * Creates a FabiDrink object with given name and a main liquid
@@ -55,6 +69,8 @@ public class FabiDrink extends Drink {
 
     @Override
     public double getAlcoholPercent() {
+        if (this.getVolume() <= 0) return 0;
+
         double alcQuantity = 0;
         for (Liquid l : liquids) {
             alcQuantity += l.getVolume() * l.getAlcoholPercent();
@@ -76,7 +92,7 @@ public class FabiDrink extends Drink {
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder(name)
-                .append(" has ").append(getAlcoholPercent()).append("% and contains:\n");
+                .append(" has ").append(String.format("%.2f", this.getAlcoholPercent())).append("% and contains:\n");
 
         for (Liquid l : liquids) {
             s.append("\t- ")
