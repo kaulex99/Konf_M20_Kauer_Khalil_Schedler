@@ -32,3 +32,15 @@ For creation a name and a main liquid is needed.
 ## AlexDrink
 Represents a special `FabiDrink` which has minimum 40% of alcohol
 - `getAlcoholPercent` returns the alcohol volume percentage of the mixture. If lower than 40%, level will be increased automatically 
+
+# Tests
+
+## FabiTest
+With the tests 2 errors in the class could be detected:
+- `getAlcoholPercent` Error when no Liquid was added (Division by zero)
+- `toString` Wrong format of alcohol percentage (too many decimal places)
+
+## TestCoverage result by IntelliJ
+| Classname  | Class [%]  | Method [%]  | Line [%]  |
+|:-:|:-:|:-:|:-:|
+| FabiDrink  | 100  | 100  | 100  |
