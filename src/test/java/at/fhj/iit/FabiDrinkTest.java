@@ -16,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @version 1.0
  * @since 2021-04-15
  */
+@DisplayName("Testing FabiDrink implementation")
 class FabiDrinkTest {
 
     private FabiDrink sut;
@@ -37,7 +38,7 @@ class FabiDrinkTest {
     }
 
     @Test
-    @DisplayName("Test volume")
+    @DisplayName("Testing volume")
     void getVolume() {
         assertEquals(this.sut.getVolume(), 0);
 
@@ -49,6 +50,7 @@ class FabiDrinkTest {
     }
 
     @Test
+    @DisplayName("Testing alcohol percentage calculation")
     void getAlcoholPercent() {
         assertEquals(0, this.sut.getAlcoholPercent());
 
@@ -60,7 +62,7 @@ class FabiDrinkTest {
     }
 
     @Test
-    @DisplayName("Test is alcoholic")
+    @DisplayName("Testing is alcoholic")
     void isAlcoholic() {
         assertFalse(this.sut.isAlcoholic());
 
@@ -72,7 +74,7 @@ class FabiDrinkTest {
     }
 
     @Test
-    @DisplayName("Test is not alcoholic")
+    @DisplayName("Testing is not alcoholic")
     void isNotAlcoholic() {
         assertFalse(this.sut.isAlcoholic());
 
@@ -81,7 +83,7 @@ class FabiDrinkTest {
     }
 
     @Test
-    @DisplayName("Test toString format")
+    @DisplayName("Testing toString format")
     void testToString() {
         this.sut.addLiquid(new Liquid("L1", 0.1, 38));
         this.sut.addLiquid(new Liquid("L2", 0.25, 85));
@@ -95,7 +97,7 @@ class FabiDrinkTest {
     }
 
     @Test
-    @DisplayName("Test constructor with name")
+    @DisplayName("Testing constructor with name")
     void nameConstructor() {
         FabiDrink drink = new FabiDrink("TestName");
 
@@ -104,7 +106,7 @@ class FabiDrinkTest {
     }
 
     @Test
-    @DisplayName("Test constructor with main Liquid")
+    @DisplayName("Testing constructor with main Liquid")
     void mainLiquidConstructor() {
         FabiDrink drink = new FabiDrink("TestDrink", new Liquid("L1", 0.1, 10));
 
@@ -113,7 +115,7 @@ class FabiDrinkTest {
     }
 
     @Test
-    @DisplayName("Test constructor with Liquid list")
+    @DisplayName("Testing constructor with Liquid list")
     void liquidListConstructor() {
         List<Liquid> liquids = new ArrayList<>();
 
