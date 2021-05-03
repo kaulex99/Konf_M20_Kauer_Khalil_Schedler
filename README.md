@@ -2,9 +2,9 @@
 Repository for exercise UE02 of configuration management course.
 
 **Group N:**
-- Kauer Alexander
-- Khalil Adam
-- Schedler Fabian
+- Kauer Alexander (@kaulex99)
+- Khalil Adam (@adamkhalil1)
+- Schedler Fabian (@dev-Fabi)
 
 ## Main
 Different liquids and drinks are created and printed on the console.s
@@ -49,11 +49,11 @@ With the tests 2 errors in the class could be detected:
 The goal was to reach 100% tests coverage. So we had to test every method of the class. Generally, to tell Java that we want to create a test method, we have to add `@Test` above. In the `@BeforeEach` annotated method, we create an instance of the Drink, so we have an instance ready to test.
 
 ## TestCoverage result by IntelliJ
-| Classname  | Class [%]  | Method [%]  | Line [%]  | 
-|:-:|:-:|:-:|:-:|
-| AdamsDrinkTest  | 100%  | 100%  | 100%  |
-| FabiDrink  | 100%  | 100%  | 100%  |
-|  AlexDrink  | 100%  | 100%  | 100%  |
+| Classname  | Class [%] | Method [%] | Line [%] | 
+| :--------: | :-------: | :--------: | :------: |
+| AdamsDrink | 100%      | 100%       | 100%     |
+| FabiDrink  | 100%      | 100%       | 100%     |
+| AlexDrink  | 100%      | 100%       | 100%     |
 
 # JavaDoc
 JavaDoc is part of Java to enable developers a way of documentation. There is a predefined structe how e.g. a class documentation should look like.
