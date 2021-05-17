@@ -15,17 +15,26 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Fabian Schedler
  * @version 1.0
  * @since 2021-04-15
+ * @see FabiDrink
+ *
+ * Testing FabiDrink Implementation
  */
 @DisplayName("Testing FabiDrink implementation")
 class FabiDrinkTest {
 
     private FabiDrink sut;
 
+    /**
+     * inits FabiDrink for each individual test
+     */
     @BeforeEach
     void setUp() {
         this.sut = new FabiDrink("TestDrink");
     }
 
+    /**
+     * tests adding of liquids
+     */
     @ParameterizedTest
     @DisplayName("Testing add Liquid")
     @ValueSource(ints = {0, 5, 10, 13})
@@ -37,6 +46,9 @@ class FabiDrinkTest {
         assertEquals(count, this.sut.liquids.size());
     }
 
+    /**
+     * tests volume calculation
+     */
     @Test
     @DisplayName("Testing volume")
     void getVolume() {
@@ -49,6 +61,9 @@ class FabiDrinkTest {
         assertEquals(0.5, this.sut.getVolume(), 0.0001);
     }
 
+    /**
+     * tests alcohol percentage calculation
+     */
     @Test
     @DisplayName("Testing alcohol percentage calculation")
     void getAlcoholPercent() {
@@ -61,6 +76,9 @@ class FabiDrinkTest {
         assertEquals(25, this.sut.getAlcoholPercent(), 0.0001);
     }
 
+    /**
+     * tests alcoholic determination when alcohol is included
+     */
     @Test
     @DisplayName("Testing is alcoholic")
     void isAlcoholic() {
@@ -73,6 +91,9 @@ class FabiDrinkTest {
         assertTrue(this.sut.isAlcoholic());
     }
 
+    /**
+     * tests alcoholic determination when no alcohol is included
+     */
     @Test
     @DisplayName("Testing is not alcoholic")
     void isNotAlcoholic() {
@@ -82,6 +103,9 @@ class FabiDrinkTest {
         assertFalse(this.sut.isAlcoholic());
     }
 
+    /**
+     * tests the formatting of toString
+     */
     @Test
     @DisplayName("Testing toString format")
     void testToString() {
@@ -96,6 +120,9 @@ class FabiDrinkTest {
                 this.sut.toString());
     }
 
+    /**
+     * tests the construction with no liquid
+     */
     @Test
     @DisplayName("Testing constructor with name")
     void nameConstructor() {
@@ -105,6 +132,9 @@ class FabiDrinkTest {
         assertEquals(0, drink.liquids.size());
     }
 
+    /**
+     * tests the construction with a main liquid
+     */
     @Test
     @DisplayName("Testing constructor with main Liquid")
     void mainLiquidConstructor() {
@@ -114,6 +144,9 @@ class FabiDrinkTest {
         assertEquals("TestDrink", drink.name);
     }
 
+    /**
+     * tests the construction with a liquid list
+     */
     @Test
     @DisplayName("Testing constructor with Liquid list")
     void liquidListConstructor() {

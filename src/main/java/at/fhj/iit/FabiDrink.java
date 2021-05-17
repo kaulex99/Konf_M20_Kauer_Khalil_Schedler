@@ -57,6 +57,9 @@ public class FabiDrink extends Drink {
         this.liquids.add(l);
     }
 
+    /**
+     * @return volume of the whole drink
+     */
     @Override
     public double getVolume() {
         double v = 0;
@@ -67,6 +70,9 @@ public class FabiDrink extends Drink {
         return v;
     }
 
+    /**
+     * @return the alcohol percentage of the whole drink
+     */
     @Override
     public double getAlcoholPercent() {
         if (this.getVolume() <= 0) return 0;
@@ -78,6 +84,9 @@ public class FabiDrink extends Drink {
         return alcQuantity / this.getVolume();
     }
 
+    /**
+     * @return if the drink is alcoholic
+     */
     @Override
     public boolean isAlcoholic() {
         for (Liquid l : liquids) {
@@ -88,7 +97,9 @@ public class FabiDrink extends Drink {
         return false;
     }
 
-
+    /**
+     * @return formatted recipe
+     */
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder(name)
