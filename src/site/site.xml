@@ -1,0 +1,13 @@
+<project name="Drinks Documentation">
+    <publishDate position="right"/>
+    <version position="left"/>
+    <body>
+        <menu name="Overview">
+            <item name="Introduction" href="index.html"/>
+            <item name="README" href="README.html"/>
+        </menu>
+        <menu ref="reports"/>
+        <menu ref="parent"/>
+        <menu ref="modules"/>
+    </body>
+</project>
