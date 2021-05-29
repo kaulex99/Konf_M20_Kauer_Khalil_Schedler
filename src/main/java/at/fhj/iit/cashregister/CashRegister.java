@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+// TODO JavaDoc Fabi
 public class CashRegister {
     private List<Transaction> transactions = new ArrayList<>();
 
@@ -12,32 +13,32 @@ public class CashRegister {
     }
 
     double getNoneAlcoholicRevenue(){
-        // TODO implement
+        // TODO implement Fabi
         return 0;
     }
 
     double getLowAlcoholicRevenue(){
-        // TODO implement
+        // TODO implement Adam
         return 0;
     }
 
     double getHighAlcoholicRevenue(){
-        // TODO implement
+        // TODO implement Adam
         return 0;
     }
 
     double getDayRevenue(Date day){
-        // TODO implement
+        // TODO implement Alex
         return 0;
     }
 
     double getPersonRevenue(String name){
-        // TODO implement
+        // TODO implement Alex
         return 0;
     }
 
     double getPersonDayRevenue(String name, Date day){
-        // TODO implement
+        // TODO implement Alex
         return 0;
     }
 }

@@ -2,6 +2,7 @@ package at.fhj.iit.cashregister;
 
 import java.util.Date;
 
+// TODO JavaDoc Alex
 public class Transaction {
     private final Buyable product;
     private final String sellerName;
