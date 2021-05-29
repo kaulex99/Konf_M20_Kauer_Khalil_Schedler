@@ -1,9 +1,15 @@
 package at.fhj.iit.cashregister;
 
+import at.fhj.iit.FabiDrink;
+import at.fhj.iit.Liquid;
+import at.fhj.iit.SimpleDrink;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.Date;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CashRegisterTest {
 
@@ -20,8 +26,22 @@ class CashRegisterTest {
     }
 
     @Test
+    @DisplayName("Check non alcoholic revenue")
     void getNoneAlcoholicRevenue() {
-        // TODO @Fabian implement
+        assertEquals(0, cashRegister.getNoneAlcoholicRevenue());
+
+        Date now = new Date();
+        Buyable noneAlcoholic = new SimpleDrink("noAlc", new Liquid("Cola", 0.5, 0));
+        Buyable alcoholic = new FabiDrink("Alc", new Liquid("Whisky", 0.02, 40));
+
+        cashRegister.sell(alcoholic, "Fabian", now);
+
+        assertEquals(0, cashRegister.getNoneAlcoholicRevenue());
+
+        cashRegister.sell(noneAlcoholic, "Fabian", now);
+        cashRegister.sell(noneAlcoholic, "Fabian", now);
+
+        assertEquals(noneAlcoholic.getPrice() * 2, cashRegister.getNoneAlcoholicRevenue());
     }
 
     @Test
