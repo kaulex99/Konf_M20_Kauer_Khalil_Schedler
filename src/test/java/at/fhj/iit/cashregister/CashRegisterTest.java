@@ -1,7 +1,11 @@
 package at.fhj.iit.cashregister;
 
+import at.fhj.iit.AlexDrink;
+import at.fhj.iit.Liquid;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -36,12 +40,19 @@ class CashRegisterTest {
 
     @Test
     void getDayRevenue() {
-        // TODO @Alex implement
+        // TODO @Alex
     }
 
     @Test
     void getPersonRevenue() {
-        // TODO @Alex implement
+        AlexDrink drink1 = new AlexDrink("TestDrink1", new Liquid("TestLiquid", 1.15, 20));
+        cashRegister.sell(drink1, "Franz", new Date());
+        cashRegister.sell(drink1, "Heinz", new Date());
+        cashRegister.sell(drink1, "Adam", new Date());
+        cashRegister.sell(drink1, "Fabi", new Date());
+        cashRegister.sell(drink1, "Heinz", new Date());
+
+        assertEquals(10.6, cashRegister.getPersonRevenue("Heinz"));
     }
 
     @Test
