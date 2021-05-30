@@ -39,6 +39,9 @@ public class AlexDrink extends FabiDrink {
         return name + " has " + getAlcoholPercent() + "%";
     }
 
+    /**
+     * @return the price of this drink (depending on number of liquids)
+     */
     @Override
     public double getPrice() {
         return 5.3;

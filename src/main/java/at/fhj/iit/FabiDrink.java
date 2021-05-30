@@ -117,6 +117,9 @@ public class FabiDrink extends Drink {
         return s.toString();
     }
 
+    /**
+     * @return the price of this drink (depending on number of liquids)
+     */
     @Override
     public double getPrice() {
         return liquids.size() * 1.3;

@@ -58,6 +58,9 @@ public class SimpleDrink extends Drink{
         return "Simple Drink called " + name + " with " + l.getAlcoholPercent() + " percent alcohol by volume";
     }
 
+    /**
+     * @return the price of this drink
+     */
     @Override
     public double getPrice() {
         return 3;

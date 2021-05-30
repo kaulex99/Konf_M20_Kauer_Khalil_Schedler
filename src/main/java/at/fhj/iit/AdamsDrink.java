@@ -35,6 +35,9 @@ public class AdamsDrink extends AlexDrink {
         return getAlcoholPercent() > 0;
     }
 
+    /**
+     * @return the price of this drink (depending on number of liquids)
+     */
     @Override
     public double getPrice() {
         return 8.4;
