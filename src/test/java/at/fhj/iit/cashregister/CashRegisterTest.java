@@ -18,13 +18,22 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class CashRegisterTest {
 
+    /**
+     * Instance for tests (system under test)
+     */
     private CashRegister cashRegister;
 
+    /**
+     * Create fresh CashRegister instance for each test
+     */
     @BeforeEach
     void setUp() {
         cashRegister = new CashRegister();
     }
 
+    /**
+     * Test if CashRegister.sell method adds a transaction
+     */
     @Test
     @DisplayName("Check if sell adds transactions")
     void sell() {
