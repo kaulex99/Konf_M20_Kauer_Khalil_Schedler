@@ -32,7 +32,7 @@ public class FabiDrink extends Drink {
      * @param name       name of drink
      * @param mainLiquid the main liquid in the drink
      */
-    FabiDrink(String name, Liquid mainLiquid) {
+    public FabiDrink(String name, Liquid mainLiquid) {
         super(name);
         this.liquids.add(mainLiquid);
     }
@@ -53,7 +53,7 @@ public class FabiDrink extends Drink {
      *
      * @param l liquid to add
      */
-    void addLiquid(Liquid l) {
+    public void addLiquid(Liquid l) {
         this.liquids.add(l);
     }
 

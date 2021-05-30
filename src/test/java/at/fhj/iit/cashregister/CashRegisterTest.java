@@ -1,10 +1,13 @@
 package at.fhj.iit.cashregister;
 
 import at.fhj.iit.AlexDrink;
+import at.fhj.iit.FabiDrink;
 import at.fhj.iit.Liquid;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -38,11 +41,27 @@ class CashRegisterTest {
         // TODO @Adam implement
     }
 
+    /**
+     * Test CashRegister.getDayRevenue method
+     */
     @Test
     void getDayRevenue() {
-        // TODO @Alex
+        FabiDrink cocktail = new FabiDrink("Long Island Ice Tea", new Liquid("Cola", 0.05, 0));
+        cocktail.addLiquid(new Liquid("White Rum", 0.02, 39.9));
+        Date today = Date.from(LocalDate.now(ZoneId.systemDefault()).atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+        Date otherDay = Date.from(LocalDate.of(2021, 5, 29).atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+
+        cashRegister.sell(cocktail, "Test2", today);
+        cashRegister.sell(cocktail, "Test1", otherDay);
+        cashRegister.sell(cocktail, "Test2", today);
+        cashRegister.sell(cocktail, "Test2", otherDay);
+
+        assertEquals(5.2, cashRegister.getDayRevenue(otherDay));
     }
 
+    /**
+     * Test CashRegister.getPersonRevenue method
+     */
     @Test
     void getPersonRevenue() {
         AlexDrink drink1 = new AlexDrink("TestDrink1", new Liquid("TestLiquid", 1.15, 20));
@@ -55,8 +74,20 @@ class CashRegisterTest {
         assertEquals(10.6, cashRegister.getPersonRevenue("Heinz"));
     }
 
+    /**
+     * Test CashRegister.getPersonDayRevenue method
+     */
     @Test
     void getPersonDayRevenue() {
-        // TODO @Alex implement
+        AlexDrink drink1 = new AlexDrink("TestDrink1", new Liquid("TestLiquid", 1.15, 20));
+        Date today = Date.from(LocalDate.now(ZoneId.systemDefault()).atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+        Date otherDay = Date.from(LocalDate.of(2021, 5, 29).atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+        cashRegister.sell(drink1, "Franz", otherDay);
+        cashRegister.sell(drink1, "Heinz", otherDay);
+        cashRegister.sell(drink1, "Adam",today);
+        cashRegister.sell(drink1, "Fabi", today);
+        cashRegister.sell(drink1, "Heinz", today);
+
+        assertEquals(5.3, cashRegister.getPersonDayRevenue("Heinz", otherDay));
     }
 }
