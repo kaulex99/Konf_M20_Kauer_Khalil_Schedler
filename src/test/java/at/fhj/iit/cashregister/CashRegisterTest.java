@@ -63,7 +63,7 @@ class CashRegisterTest {
         cashRegister.sell(cocktail, "Test2", today);
         cashRegister.sell(cocktail, "Test2", otherDay);
 
-        assertEquals(5.2, cashRegister.getDayRevenue(otherDay));
+        assertEquals(cocktail.getPrice()*2, cashRegister.getDayRevenue(otherDay));
     }
 
     /**
@@ -79,7 +79,7 @@ class CashRegisterTest {
         cashRegister.sell(drink1, "Fabi", new Date());
         cashRegister.sell(drink1, "Heinz", new Date());
 
-        assertEquals(10.6, cashRegister.getPersonRevenue("Heinz"));
+        assertEquals(drink1.getPrice()*2, cashRegister.getPersonRevenue("Heinz"));
     }
 
     /**
@@ -97,6 +97,6 @@ class CashRegisterTest {
         cashRegister.sell(drink1, "Fabi", today);
         cashRegister.sell(drink1, "Heinz", today);
 
-        assertEquals(5.3, cashRegister.getPersonDayRevenue("Heinz", otherDay));
+        assertEquals(drink1.getPrice(), cashRegister.getPersonDayRevenue("Heinz", otherDay));
     }
 }
