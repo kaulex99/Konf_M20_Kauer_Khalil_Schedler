@@ -4,6 +4,7 @@ import at.fhj.iit.AlexDrink;
 import at.fhj.iit.FabiDrink;
 import at.fhj.iit.Liquid;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -12,6 +13,11 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Adam Khalil, Alexander Kauer, Fabian Schedler
+ * @version 1.0
+ * @see CashRegister
+ */
 class CashRegisterTest {
 
     private CashRegister cashRegister;
@@ -45,6 +51,7 @@ class CashRegisterTest {
      * Test CashRegister.getDayRevenue method
      */
     @Test
+    @DisplayName("Get day revenue")
     void getDayRevenue() {
         FabiDrink cocktail = new FabiDrink("Long Island Ice Tea", new Liquid("Cola", 0.05, 0));
         cocktail.addLiquid(new Liquid("White Rum", 0.02, 39.9));
@@ -63,6 +70,7 @@ class CashRegisterTest {
      * Test CashRegister.getPersonRevenue method
      */
     @Test
+    @DisplayName("Get person revenue")
     void getPersonRevenue() {
         AlexDrink drink1 = new AlexDrink("TestDrink1", new Liquid("TestLiquid", 1.15, 20));
         cashRegister.sell(drink1, "Franz", new Date());
@@ -78,6 +86,7 @@ class CashRegisterTest {
      * Test CashRegister.getPersonDayRevenue method
      */
     @Test
+    @DisplayName("Get person and day revenue")
     void getPersonDayRevenue() {
         AlexDrink drink1 = new AlexDrink("TestDrink1", new Liquid("TestLiquid", 1.15, 20));
         Date today = Date.from(LocalDate.now(ZoneId.systemDefault()).atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
