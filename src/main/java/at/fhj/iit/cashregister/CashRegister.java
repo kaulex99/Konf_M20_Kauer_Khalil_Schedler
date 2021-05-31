@@ -56,6 +56,7 @@ public class CashRegister {
     }
 
     /**
+     * Number of sold items
      * @return number of transactions (sold drinks)
      */
     int getTransactionCount() {
