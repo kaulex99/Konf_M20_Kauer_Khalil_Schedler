@@ -13,6 +13,7 @@ public class CashRegister {
     }
 
     /**
+     * Total sales of none alcoholic drinks
      * @return revenue made with none alcoholic drinks
      */
     double getNoneAlcoholicRevenue(){
