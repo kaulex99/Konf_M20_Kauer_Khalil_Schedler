@@ -1,6 +1,6 @@
 # CashRegister feature
 
-This feature will implement a cash register which allows generating following revenue reports:
+This feature will implement a cash register which allows selling drinks and generating following revenue reports:
 
 - revenue from none alcoholic drinks
 - revenue from low alcoholic drinks (0 < % <= 16)
@@ -19,13 +19,21 @@ general corrections are made and then the branch gets merged back into main.
 
 This is done so that everyone in the team can work on his part for himself without getting bigger merging conflicts.
 
+We also decided to use the pull request feature and review the changes a person made before they get merged. So that the
+possibility of forgetting something is lowered.
+
 ## Implementation concept
 
 - An interface (Buyable) with a getter for the price is created. The abstract Drink class implements this. In every
   drink the return value will be overridden
-    - So that not the whole project must be refactored, the price is statically "calculated" for each type of drink 
+    - So that not the whole project must be refactored, the price is statically "calculated" for each type of drink
       (price can't be set or passed from outside)
 - A class (Transaction) with a Buyable, a seller name and buy date is created
     - For simplicity the seller gets only represented by a string (name)
 - The CashRegister class has a list of transactions and a sell method which is used to add transactions
     - For every report there is an own method, calculating the requested revenue report from the transaction list
+
+### Responsibility
+- Alexander will implement the day and person related reports and do the setup
+- Adam will implement the alcoholic drinks related reports
+- Fabian will implement the base functions and the non-alcoholic drink report
