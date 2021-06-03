@@ -17,9 +17,18 @@ public class CashRegister {
         return 0;
     }
 
+    /**
+     * Total sales of low alcoholic drinks
+     * @return lowAlcoholRevenue made with alholic drinks that are 16% or less
+     */
     double getLowAlcoholicRevenue(){
-        // TODO implement Adam
-        return 0;
+        double lowAlcoholRevenue = 0;
+        for (Transaction t : transactions){
+            if(t.getProduct().isAlcoholic() && t.getProduct().getAlcoholPercentage()<=16) {
+                lowAlcoholRevenue += t.getProduct().getPrice();
+            }
+        }
+        return lowAlcoholRevenue;
     }
 
     double getHighAlcoholicRevenue(){
