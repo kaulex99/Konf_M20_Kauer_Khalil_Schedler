@@ -1,19 +1,20 @@
-/**
- * Author: Adam Khalil
- * Class that extends SimpleDrink
- * Date: 11.03.2021
- */
+
 
 package at.fhj.iit;
+
 /**
- * AdamsDrink is an extension of a simple drink and tastes better
+ * AdamsDrink is an extension of AlexDrink
  *
+ * @Author: Adam Khalil
+ * @Version: 1.0
  */
+
 public class AdamsDrink extends AlexDrink {
 
     public AdamsDrink(String name, Liquid mainLiquid) {
         super(name, mainLiquid);
     }
+
     @Override
     public String toString() {
         return name;
@@ -22,12 +23,12 @@ public class AdamsDrink extends AlexDrink {
 
     @Override
     public double getVolume() {
-        return super.getVolume()+1;
+        return super.getVolume() + 1;
     }
 
     @Override
     public double getAlcoholPercent() {
-        return super.getAlcoholPercent()/10;
+        return super.getAlcoholPercent() / 10;
     }
 
     @Override

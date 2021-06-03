@@ -19,7 +19,6 @@ public class CashRegister {
 
     /**
      * Total sales of low alcoholic drinks
-     *
      * @return lowAlcoholRevenue made with alcoholic drinks that are 16% or less
      */
     double getLowAlcoholicRevenue() {
@@ -34,7 +33,6 @@ public class CashRegister {
 
     /**
      * Total sales of high alcoholic drinks
-     *
      * @return highAlcoholRevenue made with alcoholic drinks that are higher than 16%
      */
     double getHighAlcoholicRevenue() {

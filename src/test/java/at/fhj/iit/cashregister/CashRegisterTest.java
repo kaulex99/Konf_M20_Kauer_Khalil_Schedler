@@ -30,6 +30,9 @@ class CashRegisterTest {
         // TODO @Fabian implement
     }
 
+    /**
+     * Tests if the revenue is correct for alcoholic drinks that are less or equal 16%
+     */
     @Test
     @DisplayName("Check low alcoholic revenue")
     void getLowAlcoholicRevenue() {
@@ -53,9 +56,11 @@ class CashRegisterTest {
         cashRegister.sell(lowAlcoholic2, "Adam", now);
 
         assertEquals(lowAlcoholic1.getPrice() + lowAlcoholic2.getPrice(), cashRegister.getLowAlcoholicRevenue());
-
     }
 
+    /**
+     * Tests if the revenue is correct for alcoholic drinks over 16%
+     */
     @Test
     @DisplayName("Check high alcoholic revenue")
     void getHighAlcoholicRevenue() {
@@ -82,7 +87,6 @@ class CashRegisterTest {
         cashRegister.sell(highAlcoholic2, "Adam", now);
 
         assertEquals(highAlcoholic1.getPrice() + highAlcoholic2.getPrice(), cashRegister.getHighAlcoholicRevenue());
-
     }
 
     @Test
