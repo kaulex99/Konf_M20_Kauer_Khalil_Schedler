@@ -1,6 +1,10 @@
 package at.fhj.iit.cashregister;
 
-// TODO JavaDoc Adam
+/**
+ * @author Adam Khalil
+ * @version 1.0
+ */
+
 public interface Buyable {
     double getPrice();
     boolean isAlcoholic();
