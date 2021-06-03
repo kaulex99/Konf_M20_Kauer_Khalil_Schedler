@@ -19,47 +19,70 @@ public class CashRegister {
 
     /**
      * Sells a drink (adds new transaction)
-     * @param product product (drink) to sell
-     * @param seller name of the seller (waiter)
+     *
+     * @param product  product (drink) to sell
+     * @param seller   name of the seller (waiter)
      * @param sellDate date at which the product was sold
      */
-    void sell(Buyable product, String seller, Date sellDate){
+    void sell(Buyable product, String seller, Date sellDate) {
         transactions.add(new Transaction(product, seller, sellDate));
     }
 
     /**
      * Total sales of none alcoholic drinks
+     *
      * @return revenue made with none alcoholic drinks
      */
-    double getNoneAlcoholicRevenue(){
+    double getNoneAlcoholicRevenue() {
         double revenue = 0;
-        for (Transaction t : transactions){
-            if(!t.getProduct().isAlcoholic()) {
+        for (Transaction t : transactions) {
+            if (!t.getProduct().isAlcoholic()) {
                 revenue += t.getProduct().getPrice();
             }
         }
         return revenue;
     }
 
-    double getLowAlcoholicRevenue(){
-        // TODO implement Adam
-        return 0;
+    /**
+     * Total sales of low alcoholic drinks
+     *
+     * @return lowAlcoholRevenue made with alcoholic drinks that are 16% or less
+     */
+    double getLowAlcoholicRevenue() {
+        double lowAlcoholRevenue = 0;
+        for (Transaction t : transactions) {
+            if (t.getProduct().getAlcoholPercent() > 0 && t.getProduct().getAlcoholPercent() <= 16) {
+                lowAlcoholRevenue += t.getProduct().getPrice();
+            }
+        }
+        return lowAlcoholRevenue;
     }
 
-    double getHighAlcoholicRevenue(){
-        // TODO implement Adam
-        return 0;
+    /**
+     * Total sales of high alcoholic drinks
+     *
+     * @return highAlcoholRevenue made with alcoholic drinks that are higher than 16%
+     */
+    double getHighAlcoholicRevenue() {
+        double highAlcoholRevenue = 0;
+        for (Transaction t : transactions) {
+            if (t.getProduct().getAlcoholPercent() > 16) {
+                highAlcoholRevenue += t.getProduct().getPrice();
+            }
+        }
+        return highAlcoholRevenue;
     }
 
     /**
      * Total sales filtered by date
+     *
      * @param day Date for filtering transactions
      * @return sum of filtered total sales
      */
-    double getDayRevenue(Date day){
+    double getDayRevenue(Date day) {
         double sum = 0;
 
-        for (Transaction t: transactions) {
+        for (Transaction t : transactions) {
             if (isSameDate(t.getBuyDate(), day))
                 sum += t.getProduct().getPrice();
         }
@@ -69,14 +92,15 @@ public class CashRegister {
 
     /**
      * Total sales filtered by person name
+     *
      * @param name Name for filtering transactions
      * @return sum of filtered total sales
      */
-    double getPersonRevenue(String name){
+    double getPersonRevenue(String name) {
         double sum = 0;
 
-        for(Transaction t: transactions){
-            if(t.getSellerName().equals(name))
+        for (Transaction t : transactions) {
+            if (t.getSellerName().equals(name))
                 sum += t.getProduct().getPrice();
         }
 
@@ -85,15 +109,16 @@ public class CashRegister {
 
     /**
      * Total sales filtered by person name and date
+     *
      * @param name Name for filtering transactions
-     * @param day Date for filtering transactions
+     * @param day  Date for filtering transactions
      * @return sum of filtered total sales
      */
-    double getPersonDayRevenue(String name, Date day){
+    double getPersonDayRevenue(String name, Date day) {
         double sum = 0;
 
-        for(Transaction t: transactions){
-            if(t.getSellerName().equals(name) && isSameDate(t.getBuyDate(), day))
+        for (Transaction t : transactions) {
+            if (t.getSellerName().equals(name) && isSameDate(t.getBuyDate(), day))
                 sum += t.getProduct().getPrice();
         }
 
@@ -102,11 +127,12 @@ public class CashRegister {
 
     /**
      * Compare two dates and checks if they have the same day, month and year
+     *
      * @param dateOne any date for comparison
      * @param dateTwo any other date for comparisons
      * @return if they have the same day, month and year -> true/false
      */
-    private boolean isSameDate(Date dateOne, Date dateTwo){
+    private boolean isSameDate(Date dateOne, Date dateTwo) {
         LocalDate date1 = dateOne.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         LocalDate date2 = dateTwo.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
@@ -115,6 +141,7 @@ public class CashRegister {
 
     /**
      * Number of sold items
+     *
      * @return number of transactions (sold drinks)
      */
     int getTransactionCount() {
