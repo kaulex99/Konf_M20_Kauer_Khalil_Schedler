@@ -24,7 +24,7 @@ public class CashRegister {
      * @param seller   name of the seller (waiter)
      * @param sellDate date at which the product was sold
      */
-    void sell(Buyable product, String seller, Date sellDate) {
+    public void sell(Buyable product, String seller, Date sellDate) {
         transactions.add(new Transaction(product, seller, sellDate));
     }
 
@@ -33,7 +33,7 @@ public class CashRegister {
      *
      * @return revenue made with none alcoholic drinks
      */
-    double getNoneAlcoholicRevenue() {
+    public double getNoneAlcoholicRevenue() {
         double revenue = 0;
         for (Transaction t : transactions) {
             if (!t.getProduct().isAlcoholic()) {
@@ -48,7 +48,7 @@ public class CashRegister {
      *
      * @return lowAlcoholRevenue made with alcoholic drinks that are 16% or less
      */
-    double getLowAlcoholicRevenue() {
+    public double getLowAlcoholicRevenue() {
         double lowAlcoholRevenue = 0;
         for (Transaction t : transactions) {
             if (t.getProduct().getAlcoholPercent() > 0 && t.getProduct().getAlcoholPercent() <= 16) {
@@ -63,7 +63,7 @@ public class CashRegister {
      *
      * @return highAlcoholRevenue made with alcoholic drinks that are higher than 16%
      */
-    double getHighAlcoholicRevenue() {
+    public double getHighAlcoholicRevenue() {
         double highAlcoholRevenue = 0;
         for (Transaction t : transactions) {
             if (t.getProduct().getAlcoholPercent() > 16) {
@@ -79,7 +79,7 @@ public class CashRegister {
      * @param day Date for filtering transactions
      * @return sum of filtered total sales
      */
-    double getDayRevenue(Date day) {
+    public double getDayRevenue(Date day) {
         double sum = 0;
 
         for (Transaction t : transactions) {
@@ -96,7 +96,7 @@ public class CashRegister {
      * @param name Name for filtering transactions
      * @return sum of filtered total sales
      */
-    double getPersonRevenue(String name) {
+    public double getPersonRevenue(String name) {
         double sum = 0;
 
         for (Transaction t : transactions) {
@@ -114,7 +114,7 @@ public class CashRegister {
      * @param day  Date for filtering transactions
      * @return sum of filtered total sales
      */
-    double getPersonDayRevenue(String name, Date day) {
+    public double getPersonDayRevenue(String name, Date day) {
         double sum = 0;
 
         for (Transaction t : transactions) {
@@ -144,7 +144,7 @@ public class CashRegister {
      *
      * @return number of transactions (sold drinks)
      */
-    int getTransactionCount() {
+    public int getTransactionCount() {
         return transactions.size();
     }
 }

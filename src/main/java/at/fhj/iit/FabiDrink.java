@@ -22,7 +22,7 @@ public class FabiDrink extends Drink {
      *
      * @param name       name of drink
      */
-    FabiDrink(String name){
+    public FabiDrink(String name){
         super(name);
     }
 
@@ -43,7 +43,7 @@ public class FabiDrink extends Drink {
      * @param name    name of drink
      * @param liquids liquids contained in the drink
      */
-    FabiDrink(String name, List<Liquid> liquids) {
+    public FabiDrink(String name, List<Liquid> liquids) {
         super(name);
         this.liquids.addAll(liquids);
     }
