@@ -1,12 +1,14 @@
 # Konf_M20_Kauer_Khalil_Schedler
 
-Repository for exercise UE02 of configuration management course.
+Repository for the exercises of configuration management course.
 
 **Group N:**
 
-- Kauer Alexander (@kaulex99)
-- Khalil Adam (@adamkhalil1)
-- Schedler Fabian (@dev-Fabi)
+- Kauer Alexander ([@kaulex99](https://github.com/kaulex99))
+- Khalil Adam ([@adamkhalil1](https://github.com/adamkhalil1))
+- Schedler Fabian ([@dev-Fabi](https://github.com/dev-Fabi))
+
+---
 
 ## Main
 
@@ -76,7 +78,7 @@ of the Drink, so we have an instance ready to test.
 
 # JavaDoc
 
-JavaDoc is part of Java to enable developers a way of documentation. There is a predefined structe how e.g. a class
+JavaDoc is part of Java to enable developers a way of documentation. There is a predefined struct how e.g. a class
 documentation should look like.
 
 ``` java
@@ -99,7 +101,7 @@ Keyword to provide the authors of the class/method.
 
 ### @version
 
-Keyword to providde current version of the class/method.
+Keyword to provide current version of the class/method.
 
 ### @see
 
@@ -125,10 +127,17 @@ Keyword to tell the reader that this method could cause an exception.
 
 ## Automated testing
 
-That maven can run the automated tests the maven surefire plugin is needed (org.apache.maven.plugins:
-maven-surefire-plugin)
+That maven can run the automated tests the maven surefire plugin is needed (*org.apache.maven.plugins:
+maven-surefire-plugin*)
+
+## JavaDoc integration
+
+To integrate the JavaDocs the maven javadoc report plugin is needed (*org.apache.maven.plugins:maven-javadoc-plugin*)
+In the configuration of that plugin following option is added `<additionalJOption>-Xdoclint:none</additionalJOption>`.  
+This disables the JavaDoc linting, which means that the JavaDoc creation won't fail because of missing or incorrect
+JavaDoc comments.
 
 ## Testreports
 
-To generate a test report for the maven site the jacoco plugin can be used (org.jacoco:jacoco-maven-plugin)  
+To generate a test report for the maven site the jacoco plugin can be used (*org.jacoco:jacoco-maven-plugin*)  
 Therefore in the build "section" the report must be created and in the report "section" it gets added to the maven site

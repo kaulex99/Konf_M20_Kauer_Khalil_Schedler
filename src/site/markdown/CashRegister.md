@@ -24,7 +24,7 @@ possibility of forgetting something is lowered.
 
 ## Implementation concept
 
-- An interface (Buyable) with a getter for the price is created. The abstract Drink class implements this. In every
+- An interface (Buyable) with a getter for the price, the isAlcoholic and the alcohol percentage is created. The abstract Drink class implements this. In every
   drink the return value will be overridden
     - So that not the whole project must be refactored, the price is statically "calculated" for each type of drink
       (price can't be set or passed from outside)
